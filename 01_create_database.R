@@ -5,7 +5,7 @@ con <- dbConnect(duckdb(), dbdir = "pcdas_sih.duckdb", read_only = FALSE)
 dbExecute(con, "CREATE TABLE sih AS 
           SELECT res_codigo_adotado AS cod_res, 
           int_MUNCOD AS cod_int, 
-          dt_inter, def_ident, def_car_int 
+          DT_INTER AS dt_inter, def_ident, def_car_int 
           FROM read_csv('/media/raphael/lacie/pcdas_sih/csv/*.csv',
           delim = ',',
           header = true,
