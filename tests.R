@@ -7,9 +7,11 @@ library(rpcdas)
 
 list_pcdas_tables()
 
-query <- "SELECT TOP 100 res_codigo_adotado AS cod_res, int_MUNCOD AS cod_int, COUNT(*) AS freq 
+query <- "SELECT res_codigo_adotado AS cod_res, int_MUNCOD AS cod_int, COUNT(*) AS freq 
 FROM \"datasus-sih\" 
-WHERE dt_inter = '2020-01-01'
+WHERE ano_internacao = 2020
+AND res_SIGLA_UF = 'AC'
+AND mes_internacao = 1 
 AND def_ident = 'Normal' 
 AND def_car_int = 'Urgência'
 GROUP BY cod_res, cod_int"
