@@ -53,4 +53,9 @@ res_urgencia <- sih_tbl |>
   ) |>
   collect()
 
+saveRDS(res_geral, file = "sih_flow_geral.rds")
+saveRDS(res_eletivo, file = "sih_flow_eletivo.rds")
+saveRDS(res_urgencia, file = "sih_flow_urgencia.rds")
+
+
 dbDisconnect(con)
